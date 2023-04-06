@@ -1,54 +1,39 @@
-import { v4 as uuid } from 'uuid'
+import { v4 as uuid } from "uuid";
 
-export const hello = 'world'
+export const hello = "world";
 
 export default [
   {
     id: uuid(),
-    name: 'Emre',
+    name: "Emre",
     age: 45,
-    hobbies: [
-      'Voleybol',
-      'Kore dizisi',
-      'Latin müzik',
-      'Problem çözmek',
-    ],
+    hobbies: ["Voleybol", "Kore dizisi", "Latin müzik", "Problem çözmek"],
     married: true,
     pets: [
-      { id: uuid(), name: 'Pia', type: 'Kedi' },
-      { id: uuid(), name: 'Alfa', type: 'Köpek' },
-    ]
+      { id: uuid(), name: "Pia", type: "Kedi" },
+      { id: uuid(), name: "Alfa", type: "Köpek" },
+    ],
   },
   {
     id: uuid(),
-    name: 'Erdem',
+    name: "Erdem",
     age: 27,
-    hobbies: [
-      'Balık Tutmak',
-      'Gezmek',
-      'Heavy metal',
-      'Kodlamak',
-    ],
+    hobbies: ["Balık Tutmak", "Gezmek", "Heavy metal", "Kodlamak"],
     married: true,
     pets: [
-      { id: uuid(), name: 'Mars', type: 'Tavşan' },
-      { id: uuid(), name: 'Kraker', type: 'Köpek' },
-    ]
+      { id: uuid(), name: "Mars", type: "Tavşan" },
+      { id: uuid(), name: "Kraker", type: "Köpek" },
+    ],
   },
   {
     id: uuid(),
-    name: 'Hatice',
+    name: "Hatice",
     age: 31,
-    hobbies: [
-      'Trekking',
-      'Kamp',
-      'Voleybol',
-      'Dışarıda Yemek',
-    ],
+    hobbies: ["Trekking", "Kamp", "Voleybol", "Dışarıda Yemek"],
     married: false,
     pets: [
-      { id: uuid(), name: 'Ceylin', type: 'Kedi' },
-      { id: uuid(), name: 'Stark', type: 'Balık' },
-    ]
+      { id: uuid(), name: "Ceylin", type: "Kedi" },
+      { id: uuid(), name: "Stark", type: "Balık" },
+    ],
   },
-]
+];

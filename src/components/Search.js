@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
 
-export default function Search() {
-  /* 👉 Buraya props lazım mı? bir de bir yardımcı function yazsak iyi olur mu? */
-
+export default function Search({ setSearchQuery }) {
+  const handleSearch = (e) => {
+    let query = e.target.value.toLowerCase();
+    setSearchQuery(query);
+  };
   return (
-    <div className='search-friends container'>
-      <input/>
+    <div className="search-friends container">
+      <input onChange={handleSearch} type="text" />
     </div>
-  )
+  );
 }

@@ -1,28 +1,42 @@
-import React from 'react'
+import React from "react";
+import PetsList from "./PetsList";
 
-export default function Friend() {
-  /* 👉 önce başka bir compenenti bitirmen lazım? */
+export default function Friend({ friend, setFriends }) {
+  const handleMarriedChange = () => {
+    setFriends((prev) =>
+      prev.map((obj) => {
+        if (obj.id === friend.id) {
+          return { ...obj, married: !friend.married };
+        }
+        return obj;
+      })
+    );
+  };
 
-
-  /* 👉 Ya friend'leri yoksa? bunu unutmayalım. Bir şey yapmak lazım*/
   return (
-    <div className='friend-friends container'>
-      <div className='friend-info'>
+    <div className="friend-friends container">
+      <div className="friend-info">
         <div>
-          <h3>Adı: Fatih </h3>
-          <p>Yaş: 55 </p>
-          <p>Evli mi?: Evet <button>Değiştir</button></p>
-          <div>Hobileri:
+          <h3>Adı: {friend.name} </h3>
+          <p>Yaş: {friend.age} </p>
+          <p>
+            Evli mi?: {friend.married ? "Evet" : "Hayir"}{" "}
+            <button onClick={() => handleMarriedChange()}>Değiştir</button>
+          </p>
+          <div>
+            Hobileri:
             <ul>
-             
+              {friend.hobbies.map((hobby) => (
+                <li key={hobby}>{hobby}</li>
+              ))}
             </ul>
           </div>
         </div>
 
         <div>
-          {/* 👉 Tasarıma göre buraya hangi component gelmeli? */}
+          <PetsList pets={friend.pets} />
         </div>
       </div>
     </div>
-  )
+  );
 }

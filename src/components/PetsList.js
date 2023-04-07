@@ -1,13 +1,12 @@
 import React from "react";
 import Pet from "./Pet";
 
-export default function PetsList({ pets }) {
+export default function PetsList({ pets, handlePetLike }) {
   return (
     <div className="list-pets-friends container">
       {pets.map((pet) => {
-        return <Pet key={pet.id} pet={pet} />;
+        return <Pet key={pet.id} pet={pet} handlePetLike={handlePetLike} />;
       })}
-      {/* 👉 Buraya hangi component gelmeli ve daha önemlisi nasıl gelmeli? */}
     </div>
   );
 }

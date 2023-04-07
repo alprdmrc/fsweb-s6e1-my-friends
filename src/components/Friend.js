@@ -1,18 +1,7 @@
 import React from "react";
 import PetsList from "./PetsList";
 
-export default function Friend({ friend, setFriends }) {
-  const handleMarriedChange = () => {
-    setFriends((prev) =>
-      prev.map((obj) => {
-        if (obj.id === friend.id) {
-          return { ...obj, married: !friend.married };
-        }
-        return obj;
-      })
-    );
-  };
-
+export default function Friend({ friend, handleMarriedChange }) {
   return (
     <div className="friend-friends container">
       <div className="friend-info">
@@ -21,7 +10,9 @@ export default function Friend({ friend, setFriends }) {
           <p>Yaş: {friend.age} </p>
           <p>
             Evli mi?: {friend.married ? "Evet" : "Hayir"}{" "}
-            <button onClick={() => handleMarriedChange()}>Değiştir</button>
+            <button onClick={() => handleMarriedChange(friend.id)}>
+              Değiştir
+            </button>
           </p>
           <div>
             Hobileri:

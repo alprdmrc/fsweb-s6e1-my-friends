@@ -1,13 +1,9 @@
 import React from "react";
 
-export default function Search({ setSearchQuery }) {
-  const handleSearch = (e) => {
-    let query = e.target.value.toLowerCase();
-    setSearchQuery(query);
-  };
+export default function Search({ handleSearch }) {
   return (
     <div className="search-friends container">
-      <input onChange={handleSearch} type="text" />
+      <input onChange={(e) => handleSearch(e.target.value)} type="text" />
     </div>
   );
 }
